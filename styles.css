@@ -57,6 +57,10 @@
     font-size: var(--sm);
     margin-right: 12px;
     cursor: pointer;
+    transition: .3s ease;
+  }
+  .navbar-email:hover{
+    color: rgb(54, 54, 100);
   }
   .navbar-shopping-cart {
     position: relative;
@@ -98,10 +102,14 @@
     border: 1px solid var(--very-light-pink);
     border-radius: 6px;
     padding: 20px 20px 0 20px;
+    animation-name: fade;
+    animation-duration: .3s;
+    animation-timing-function: ease-in;
   }
 
   .innactive{
-    display: none;
+    opacity: 0;
+    animation: fadeHide .3s ease-in;
   }
 
   .desktop-menu ul {
@@ -129,4 +137,23 @@
     text-decoration: none;
     margin-bottom: 20px;
     display: inline-block;
+  }
+
+  @keyframes fade{
+    0%{
+        opacity: 0
+    }
+    100%{
+        opacity: 1;
+    }
+  }
+  @keyframes fadeHide{
+    0%{
+        opacity: 1;
+        visibility: visible;
+    }
+    100%{
+        opacity: 0;
+        visibility: hidden;
+    }
   }
